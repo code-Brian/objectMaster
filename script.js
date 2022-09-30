@@ -38,3 +38,33 @@ byThree.forEach( p => console.log(p.name))
 console.log("\npokémon type 'fire'")
 const typeFire = pokémon.filter( p => p.types.includes("fire")).map( p => p)
 typeFire.forEach(p => console.log(p.name))
+
+// return only pokémon with more than one type
+console.log("\npokémon with more than one type")
+const moreThanOne = pokémon.filter( p => p.types.length > 1).map( p => p)
+moreThanOne.forEach( p => console.log(p.name))
+
+// an array with only the names of all pokémon
+console.log("\npokémon names only")
+const pokéNames = pokémon.filter( p => p.name).map( p => p)
+pokéNames.forEach( p => console.log(p.name))
+
+// an array with only names of pokémon with ids greater than 99.
+console.log("\npokémon with names, and ids > 99")
+const pokéNameIds = pokémon.filter( p => p.name && p.id > 99).map( p => p)
+pokéNameIds.forEach( p => console.log(p.name))
+
+// an array with names of pokémon whose only type is poison
+console.log("\npokémon names whose only type is poison")
+const typeOnlyPoison = pokémon.filter( p => p.name && p.types.includes("poison") && p.types.length === 1).map(p => p)
+typeOnlyPoison.forEach( p => console.log(p.name))
+
+// an array with second types which are flying
+console.log("\npokémon array with only first types, whose second type is flying")
+const secondTypeFlying = pokémon.filter( p => p.name && p.types.includes("flying", 1)).map( p => p)
+secondTypeFlying.forEach( p => console.log(p.name, p.types[0]))
+
+// a count of the number of pokémon whose type is normal
+console.log("\npokémon count of normies")
+const typeNormalCount = pokémon.filter( p => p.name && p.types.includes("normal")).map( p => p)
+console.log(typeNormalCount.length)
